@@ -231,10 +231,10 @@ class DataFrameAsset(DataAsset, Generic[_SparkDataFrameT]):
         if not (options is not None and "dataframe" in options and len(options) == 1):
             raise BuildBatchRequestError(message="options must contain exactly 1 key, 'dataframe'.")
 
-        if not isinstance(options["dataframe"], DataFrame):
-            raise BuildBatchRequestError(
-                message="Can not build batch request for dataframe asset " "without a dataframe."
-            )
+        #if not isinstance(options["dataframe"], DataFrame):
+         #   raise BuildBatchRequestError(
+         #       message="Can not build batch request for dataframe asset " "without a dataframe."
+         #   )
 
         return BatchRequest(
             datasource_name=self.datasource.name,
